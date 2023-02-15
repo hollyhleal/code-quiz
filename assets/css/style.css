@@ -14,6 +14,13 @@ html {
   font-size: 1rem;
 }
 
+/* styling for start page/game description */
+.start {
+  max-width: 750px;
+  margin: auto;
+  text-align: center;
+}
+
 /* Hide class to hide certain sections on page load and as game progresses */
 .hide {
   display: none;
