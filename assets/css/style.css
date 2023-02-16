@@ -21,6 +21,10 @@ html {
   text-align: center;
 }
 
+.show {
+  display: block;
+}
+
 /* Hide class to hide certain sections on page load and as game progresses */
 .hide {
   display: none;
