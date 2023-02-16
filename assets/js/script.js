@@ -21,13 +21,13 @@ var questions = [
 var startGame = document.querySelector("#startButton");
 var gameInPlay = document.querySelector(".game");
 
-var page = "show";
+var start = "show";
 
 //add event listener to start button to start the game
 // startGame.addEventListener("click", function () {
-//   if (page === "show") {
-//     page = "hide";
-//     page.setAttribute("class", "hide");
+//   if (start === "show") {
+//     start = "hide";
+//     start.setAttribute("class", "hide");
 //   }
 // });
 

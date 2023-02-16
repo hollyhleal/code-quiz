@@ -14,7 +14,7 @@
         <p>View High Scores</p>
         <p>Time:</p>
       </nav>
-      <section class="start show">
+      <section class="start" id="show">
         <h1>JavaScript Code Quiz</h1>
         <p>
           In this timed challenge, answer as many coding questions as you can.
@@ -27,13 +27,14 @@
         <button id="startButton">Start Quiz</button>
       </section>
     </header>
-    <section class="game hide">
+    <section class="game" id="hide">
       <p>This is where the game will go.</p>
+      <p id="questions"></p>
     </section>
-    <section class="finalScore hide">
+    <section class="finalScore" id="hide">
       <p>This is where the final score of current game will go.</p>
     </section>
-    <section class="highScores hide">
+    <section class="highScores" id="hide">
       <p>This is where the High Scores will live.</p>
     </section>
     <script type="text/javascript" src="./assets/js/script.js"></script>
