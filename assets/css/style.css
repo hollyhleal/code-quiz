@@ -21,6 +21,7 @@ html {
   text-align: center;
 }
 
+/* Show id to display certain sections on page load and as game progresses */
 #show {
   display: block;
 }
