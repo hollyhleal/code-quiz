@@ -28,17 +28,18 @@ var viewScoresButton = document.querySelector(".viewScoresButton");
 function startGame() {
   directions.classList.add("hide");
   gameInPlay.classList.remove("hide");
+  playGame();
 }
 
 //add event listener to start button to start the game
 startButton.addEventListener("click", startGame);
 
-//   //need to reference the global variable questions
-//   //potentially use a for loop to iterate through questions?
-var launchQuestions = "";
-
-for (var i = 0; i < questions.length; i++) {
-  questions[i].textContent = "";
+//need to reference the global variable questions
+//use a for loop to iterate through questions?
+function playGame() {
+  for (var i = 0; i < questions.length; i++) {
+    questions[i].textContent = "";
+  }
 }
 
 //when for loop concludes, call finishGame() function
