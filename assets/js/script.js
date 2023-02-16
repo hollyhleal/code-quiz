@@ -23,6 +23,7 @@ var clickStart = document.querySelector("#startButton");
 var gameInPlay = document.querySelector(".game");
 var finalScore = document.querySelector(".finalScore");
 var highScores = document.querySelector(".highScores");
+var viewScoresButton = document.querySelector(".viewScoresButton");
 
 function startGame() {
   directions.classList.add("hide");
@@ -55,4 +56,4 @@ function highScores() {
 }
 
 //add event Listener for "View High Scores"
-
+viewScoresButton.addEventListener("click", highScores);
