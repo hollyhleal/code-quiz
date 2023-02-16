@@ -21,12 +21,7 @@ html {
   text-align: center;
 }
 
-/* Show id to display certain sections on page load and as game progresses */
-#show {
-  display: block;
-}
-
 /* Hide id to hide certain sections on page load and as game progresses */
-#hide {
+.hide {
   display: none;
 }

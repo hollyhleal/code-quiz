@@ -20,21 +20,15 @@ var questions = [
 //storing references to elements in the DOM
 var directions = document.querySelector(".start");
 var clickStart = document.querySelector("#startButton");
-// var gameInPlay = document.querySelector(".game");
+var gameInPlay = document.querySelector(".game");
 
 function startGame() {
-  if (directions.className === "start") {
-    directions.id === "hide";
-  } else {
-    directions.id === "show";
-  }
+  directions.classList.add("hide");
+  gameInPlay.classList.remove("hide");
 }
 
 //add event listener to start button to start the game
-startButton.addEventListener("click", function (event) {
-  event.preventDefault();
-  startGame();
-});
+startButton.addEventListener("click", startGame);
 
 //   //need to reference the global variable questions
 //   //potentially use a for loop to iterate through questions?
