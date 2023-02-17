@@ -6,8 +6,13 @@ var questions = [
     answer: "//",
   },
   {
-    title: "True or False: Variables in JavaScript are case sensitive.",
-    choices: ["True", "False"],
+    title: "Variables in JavaScript are case sensitive.",
+    choices: [
+      "True",
+      "False",
+      "Sometimes",
+      "JavaScript doesn't contain variables.",
+    ],
     answer: "True",
   },
   {
@@ -26,6 +31,10 @@ var highScores = document.querySelector(".highScores");
 var viewScoresButton = document.querySelector(".viewScoresButton");
 var choiceEl = document.querySelector(".choices");
 var currentQuestionIndex = 0;
+var choice1El = document.querySelector("#choice1");
+var choice2El = document.querySelector("#choice2");
+var choice3El = document.querySelector("#choice3");
+var choice4El = document.querySelector("#choice4");
 var answerEl = document.querySelector(".answer");
 
 function startGame() {
@@ -40,6 +49,42 @@ startButton.addEventListener("click", startGame);
 function getQuestion() {
   var currentQuestion = questions[currentQuestionIndex];
   var titleEl = document.getElementById("question-title");
+  titleEl.textContent = currentQuestion.title;
+  for (let i = 0; i < questions[currentQuestionIndex].choices.length; i++) {
+    if (i === 0) {
+      choice1El.textContent = questions[currentQuestionIndex].options[i];
+    } else if (i === 1) {
+      choice2El.textContent = questions[currentQuestionIndex].options[i];
+    } else if (i === 2) {
+      choice3El.textContent = questions[currentQuestionIndex].options[i];
+    } else if (i === 3) {
+      choice4El.textContent = questions[currentQuestionIndex].options[i];
+    }
+  }
+  // choiceEl.innerHTML = "";
+  // currentQuestion.choices.forEach(function (choices, i) {
+  //   // console.log("inside currentQuestion choice");
+  //   var choicebtn = document.createElement("button");
+  //   choicebtn.setAttribute("class", "choices");
+  //   choicebtn.setAttribute("value", choices);
+  //   choicebtn.textContent = i + 1 + ". " + choices;
+  //   choiceEl.appendChild(choicebtn);
+
+  //   choicebtn.addEventListener("click", function () {
+  //     if (choices[i] === questions.answer) {
+  //       answerEl.textContent = "Correct!";
+  //     } else {
+  //       answerEl.textContent = "Incorrect!";
+  //     }
+  //   });
+  // });
+  // currentQuestionIndex++;
+  // continueQuestions();
+}
+
+//need to reference the global variable questions
+function continueQuestions() {
+  titleEl.textContent = document.getElementById("question-title");
   titleEl.textContent = currentQuestion.title;
   choiceEl.innerHTML = "";
   currentQuestion.choices.forEach(function (choices, i) {
@@ -58,24 +103,9 @@ function getQuestion() {
       }
     });
   });
-  continueQuestions();
 }
 
-function continueQuestions() {
-  for (var i = 0; i < questions.length; i++) {
-    currentQuestionIndex++;
-  }
-}
-
-//need to reference the global variable questions
-//use a for loop to iterate through questions?
-// function playGame() {
-//   for (var i = 0; i < questions.length; i++) {
-//     questions[i].textContent = "";
-//   }
-// }
-
-//when for loop concludes, call finishGame() function
+//when questions conclude, call finishGame() function
 function finishGame() {
   gameInPlay.classList.add("hide");
   finalScore.classList.remove("hide");
