@@ -24,23 +24,40 @@ var gameInPlay = document.querySelector(".game");
 var finalScore = document.querySelector(".finalScore");
 var highScores = document.querySelector(".highScores");
 var viewScoresButton = document.querySelector(".viewScoresButton");
+var choiceEl = document.querySelector(".choices");
+var currentQuestionIndex = 0;
 
 function startGame() {
   directions.classList.add("hide");
   gameInPlay.classList.remove("hide");
-  playGame();
+  getQuestion();
 }
 
 //add event listener to start button to start the game
 startButton.addEventListener("click", startGame);
 
+function getQuestion() {
+  var currentQuestion = questions[currentQuestionIndex];
+  var titleEl = document.getElementById("question-title");
+  titleEl.textContent = currentQuestion.title;
+  choiceEl.innerHTML = "";
+  currentQuestion.choices.forEach(function (choices, i) {
+    // console.log("inside currentQuestion choice");
+    var choicebtn = document.createElement("button");
+    choicebtn.setAttribute("class", "choices");
+    choicebtn.setAttribute("value", choices);
+    choicebtn.textContent = i + 1 + "." + choices;
+    choiceEl.appendChild(choicebtn);
+  });
+}
+
 //need to reference the global variable questions
 //use a for loop to iterate through questions?
-function playGame() {
-  for (var i = 0; i < questions.length; i++) {
-    questions[i].textContent = "";
-  }
-}
+// function playGame() {
+//   for (var i = 0; i < questions.length; i++) {
+//     questions[i].textContent = "";
+//   }
+// }
 
 //when for loop concludes, call finishGame() function
 function finishGame() {
@@ -49,7 +66,7 @@ function finishGame() {
 }
 
 //when "View High Scores" is clicked, highScores() function will run
-function highScores() {
+function showHighScores() {
   directions.classList.add("hide");
   gameInPlay.classList.add("hide");
   finalScore.classList.add("hide");
@@ -57,4 +74,4 @@ function highScores() {
 }
 
 //add event Listener for "View High Scores"
-viewScoresButton.addEventListener("click", highScores);
+viewScoresButton.addEventListener("click", showHighScores);
