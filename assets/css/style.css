@@ -25,3 +25,9 @@ html {
 .hide {
   display: none;
 }
+
+.choices {
+  text-align: center;
+  text-decoration: none;
+  display: block;
+}

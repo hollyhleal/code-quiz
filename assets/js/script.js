@@ -51,13 +51,20 @@ function getQuestion() {
     choiceEl.appendChild(choicebtn);
 
     choicebtn.addEventListener("click", function () {
-      if (choices[i] === questions[answer]) {
+      if (choices[i] === questions.answer) {
         answerEl.textContent = "Correct!";
       } else {
         answerEl.textContent = "Incorrect!";
       }
     });
   });
+  continueQuestions();
+}
+
+function continueQuestions() {
+  for (var i = 0; i < questions.length; i++) {
+    currentQuestionIndex++;
+  }
 }
 
 //need to reference the global variable questions
