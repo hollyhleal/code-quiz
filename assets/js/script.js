@@ -26,6 +26,7 @@ var highScores = document.querySelector(".highScores");
 var viewScoresButton = document.querySelector(".viewScoresButton");
 var choiceEl = document.querySelector(".choices");
 var currentQuestionIndex = 0;
+var answerEl = document.querySelector(".answer");
 
 function startGame() {
   directions.classList.add("hide");
@@ -46,8 +47,16 @@ function getQuestion() {
     var choicebtn = document.createElement("button");
     choicebtn.setAttribute("class", "choices");
     choicebtn.setAttribute("value", choices);
-    choicebtn.textContent = i + 1 + "." + choices;
+    choicebtn.textContent = i + 1 + ". " + choices;
     choiceEl.appendChild(choicebtn);
+
+    choicebtn.addEventListener("click", function () {
+      if (choices[i] === questions[answer]) {
+        answerEl.textContent = "Correct!";
+      } else {
+        answerEl.textContent = "Incorrect!";
+      }
+    });
   });
 }
 
