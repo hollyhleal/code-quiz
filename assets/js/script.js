@@ -29,7 +29,7 @@ var gameInPlay = document.querySelector(".game");
 var finalScore = document.querySelector(".finalScore");
 var highScores = document.querySelector(".highScores");
 var viewScoresButton = document.querySelector(".viewScoresButton");
-var choiceEl = document.querySelector(".choices");
+var choiceEl = document.querySelector(".choicesContainer");
 var currentQuestionIndex = 0;
 var choice1El = document.querySelector("#choice1");
 var choice2El = document.querySelector("#choice2");
@@ -52,13 +52,13 @@ function getQuestion() {
   titleEl.textContent = currentQuestion.title;
   for (let i = 0; i < questions[currentQuestionIndex].choices.length; i++) {
     if (i === 0) {
-      choice1El.textContent = questions[currentQuestionIndex].options[i];
+      choice1El.textContent = questions[currentQuestionIndex].choices[i];
     } else if (i === 1) {
-      choice2El.textContent = questions[currentQuestionIndex].options[i];
+      choice2El.textContent = questions[currentQuestionIndex].choices[i];
     } else if (i === 2) {
-      choice3El.textContent = questions[currentQuestionIndex].options[i];
+      choice3El.textContent = questions[currentQuestionIndex].choices[i];
     } else if (i === 3) {
-      choice4El.textContent = questions[currentQuestionIndex].options[i];
+      choice4El.textContent = questions[currentQuestionIndex].choices[i];
     }
   }
   // choiceEl.innerHTML = "";
