@@ -30,12 +30,28 @@
     <section class="game hide">
       <h2 id="question-title"></h2>
       <div class="choicesContainer">
-        <button id="choice1"></button>
-        <button id="choice2"></button>
-        <button id="choice3"></button>
-        <button id="choice4"></button>
+        <button
+          onclick="showAnswer(event)"
+          class="choicebtn"
+          id="choice1"
+        ></button>
+        <button
+          onclick="showAnswer(event)"
+          class="choicebtn"
+          id="choice2"
+        ></button>
+        <button
+          onclick="showAnswer(event)"
+          class="choicebtn"
+          id="choice3"
+        ></button>
+        <button
+          onclick="showAnswer(event)"
+          class="choicebtn"
+          id="choice4"
+        ></button>
       </div>
-      <div id="answer" class="answer"></div>
+      <p id="answer" class="answer"></p>
     </section>
     <section class="finalScore hide">
       <p>This is where the final score of current game will go.</p>

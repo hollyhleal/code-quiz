@@ -35,6 +35,7 @@ var choice1El = document.querySelector("#choice1");
 var choice2El = document.querySelector("#choice2");
 var choice3El = document.querySelector("#choice3");
 var choice4El = document.querySelector("#choice4");
+var choiceSelect = document.querySelector(".choicesContainer");
 var answerEl = document.querySelector(".answer");
 
 function startGame() {
@@ -70,54 +71,40 @@ function getQuestion() {
   //   choicebtn.textContent = i + 1 + ". " + choices;
   //   choiceEl.appendChild(choicebtn);
 
-  //   choicebtn.addEventListener("click", function () {
-  //     if (choices[i] === questions.answer) {
-  //       answerEl.textContent = "Correct!";
-  //     } else {
-  //       answerEl.textContent = "Incorrect!";
-  //     }
-  //   });
+  // choiceSelect.addEventListener("click", function (event) {
+  //   if (event.target.textContent === questions[currentQuestionIndex].answer) {
+  //     answerEl.textContent = "Correct!";
+  //   } else {
+  //     answerEl.textContent = "Incorrect!";
+  //   }
   // });
+
   // currentQuestionIndex++;
   // continueQuestions();
 }
 
 //need to reference the global variable questions
-function continueQuestions() {
-  titleEl.textContent = document.getElementById("question-title");
-  titleEl.textContent = currentQuestion.title;
-  choiceEl.innerHTML = "";
-  currentQuestion.choices.forEach(function (choices, i) {
-    // console.log("inside currentQuestion choice");
-    var choicebtn = document.createElement("button");
-    choicebtn.setAttribute("class", "choices");
-    choicebtn.setAttribute("value", choices);
-    choicebtn.textContent = i + 1 + ". " + choices;
-    choiceEl.appendChild(choicebtn);
-
-    choicebtn.addEventListener("click", function () {
-      if (choices[i] === questions.answer) {
-        answerEl.textContent = "Correct!";
-      } else {
-        answerEl.textContent = "Incorrect!";
-      }
-    });
-  });
+function showAnswer(event) {
+  if (event.target.textContent === questions[currentQuestionIndex].answer) {
+    answerEl.textContent = "Correct!";
+  } else {
+    answerEl.textContent = "Incorrect!";
+  }
 }
 
-//when questions conclude, call finishGame() function
-function finishGame() {
-  gameInPlay.classList.add("hide");
-  finalScore.classList.remove("hide");
-}
+// //when questions conclude, call finishGame() function
+// function finishGame() {
+//   gameInPlay.classList.add("hide");
+//   finalScore.classList.remove("hide");
+// }
 
-//when "View High Scores" is clicked, highScores() function will run
-function showHighScores() {
-  directions.classList.add("hide");
-  gameInPlay.classList.add("hide");
-  finalScore.classList.add("hide");
-  highScores.classList.remove("hide");
-}
+// //when "View High Scores" is clicked, highScores() function will run
+// function showHighScores() {
+//   directions.classList.add("hide");
+//   gameInPlay.classList.add("hide");
+//   finalScore.classList.add("hide");
+//   highScores.classList.remove("hide");
+// }
 
-//add event Listener for "View High Scores"
-viewScoresButton.addEventListener("click", showHighScores);
+// //add event Listener for "View High Scores"
+// viewScoresButton.addEventListener("click", showHighScores);
