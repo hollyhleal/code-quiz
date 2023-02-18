@@ -90,13 +90,19 @@ function showAnswer(event) {
   } else {
     answerEl.textContent = "Incorrect!";
   }
+  currentQuestionIndex++;
+  if (currentQuestionIndex >= questions.length) {
+    finishGame();
+  } else {
+    getQuestion();
+  }
 }
 
 // //when questions conclude, call finishGame() function
-// function finishGame() {
-//   gameInPlay.classList.add("hide");
-//   finalScore.classList.remove("hide");
-// }
+function finishGame() {
+  gameInPlay.classList.add("hide");
+  finalScore.classList.remove("hide");
+}
 
 // //when "View High Scores" is clicked, highScores() function will run
 // function showHighScores() {
