@@ -37,11 +37,28 @@ var choice3El = document.querySelector("#choice3");
 var choice4El = document.querySelector("#choice4");
 var choiceSelect = document.querySelector(".choicesContainer");
 var answerEl = document.querySelector(".answer");
+var timerEl = document.querySelector("#timer");
+var timeTicker = 60;
 
 function startGame() {
   directions.classList.add("hide");
   gameInPlay.classList.remove("hide");
   getQuestion();
+  runTimer();
+}
+
+function runTimer() {
+  var timer = setInterval(function () {
+    timeTicker--;
+    timerEl.textContent = timeTicker;
+    if (timeTicker <= 0) {
+      clearInterval(timer);
+      finishGame();
+    }
+    if (currentQuestionIndex >= questions.length) {
+      clearInterval(timer);
+    }
+  }, 1000);
 }
 
 //add event listener to start button to start the game
@@ -62,25 +79,6 @@ function getQuestion() {
       choice4El.textContent = questions[currentQuestionIndex].choices[i];
     }
   }
-  // choiceEl.innerHTML = "";
-  // currentQuestion.choices.forEach(function (choices, i) {
-  //   // console.log("inside currentQuestion choice");
-  //   var choicebtn = document.createElement("button");
-  //   choicebtn.setAttribute("class", "choices");
-  //   choicebtn.setAttribute("value", choices);
-  //   choicebtn.textContent = i + 1 + ". " + choices;
-  //   choiceEl.appendChild(choicebtn);
-
-  // choiceSelect.addEventListener("click", function (event) {
-  //   if (event.target.textContent === questions[currentQuestionIndex].answer) {
-  //     answerEl.textContent = "Correct!";
-  //   } else {
-  //     answerEl.textContent = "Incorrect!";
-  //   }
-  // });
-
-  // currentQuestionIndex++;
-  // continueQuestions();
 }
 
 //need to reference the global variable questions

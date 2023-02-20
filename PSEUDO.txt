@@ -1,0 +1,7 @@
+//add a timer/score tracker
+
+//subtract time from clock for incorrect answer
+
+//final page displaying final score (equivalent to final time on clock), text entry box for user to enter initials, submit button (click event)
+
+//local storage to display on high scores page

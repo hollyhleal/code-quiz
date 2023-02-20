@@ -12,7 +12,7 @@
     <header>
       <nav>
         <a class="viewScoresButton" href="#highScoresPage">View High Scores</a>
-        <p>Time:</p>
+        <div id="timer"></div>
       </nav>
       <section class="start">
         <h1>JavaScript Code Quiz</h1>
@@ -54,10 +54,12 @@
       <p id="answer" class="answer"></p>
     </section>
     <section class="finalScore hide">
-      <p>This is where the final score of current game will go.</p>
+      <p class="finalScoreDisplay">
+        This is where the final score of current game will go.
+      </p>
     </section>
     <section class="highScores hide" id="highScoresPage">
-      <p>This is where the High Scores will live.</p>
+      <p class="highScoresDisplay">This is where the High Scores will live.</p>
     </section>
     <script type="text/javascript" src="./assets/js/script.js"></script>
   </body>
