@@ -87,6 +87,7 @@ function showAnswer(event) {
     answerEl.textContent = "Correct!";
   } else {
     answerEl.textContent = "Incorrect!";
+    timeTicker -= 5;
   }
   currentQuestionIndex++;
   if (currentQuestionIndex >= questions.length) {
